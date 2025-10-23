@@ -1,3 +1,64 @@
+# Setup
+
+1. autogen推荐使用以下版本，否则代码有许多兼容问题，已经在pyproject.toml更新
+
+```sh
+autogen-agentchat  0.4.8
+autogen-core       0.4.8
+autogen-ext        0.4.8
+```
+
+# Test
+
+1. 测试代码在tests文件夹下面， 测试serialization 
+
+```sh
+python tests/test_serialization.py
+```
+
+2. 测试backend, 需要 pytest-asyncio,
+
+```sh
+pip install pytest-asyncio
+```
+
+安装pytest之后，测试命令
+
+```sh
+pytest tests/test_backend.py # run all tests
+pytest tests/test_backend.py::test_edit_message_queue # Run specific test
+pytest tests/test_backend.py -v # With verbose output
+```
+
+# Examples
+
+1. examples文件夹下提供使用例子， 拿local-agents举例
+
+```sh
+cd examples/local-agents 
+```
+
+2. 打开frontend
+
+```sh
+agdebugger scenario:get_agent_team
+```
+
+3. 在左上角messages启动聊天，先设置direct message 去 group_chat_manager, message 如下
+
+```sh
+0 
+```
+
+点击右侧绿色arrow，会被放在下方的message queue中处于待处理
+
+4. 按红色按钮开始处理message queue
+
+5. 处理过的message会被放在message history，overview会在右侧显示
+
+
+
+
 # AGDebugger
 
 AGDebugger is an interactive system to help you debug your agent teams. It offers interactions to:

@@ -85,3 +85,12 @@ def test_serialize_and_deserialize_group_chat_termination():
     )
     deserialized = serialize_and_deserialize(message)
     assert message == deserialized
+
+if __name__ == "__main__":
+    test_serialize_and_deserialize_none()
+    test_serialize_and_deserialize_group_chat_reset()
+    test_serialize_and_deserialize_group_chat_request_publish()
+    test_serialize_and_deserialize_group_chat_start()
+    test_serialize_and_deserialize_group_chat_message()
+    test_serialize_and_deserialize_group_chat_agent_response()
+    test_serialize_and_deserialize_group_chat_termination()

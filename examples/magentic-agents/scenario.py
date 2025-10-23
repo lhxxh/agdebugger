@@ -7,7 +7,7 @@ from autogen_ext.models.openai import OpenAIChatCompletionClient
 
 
 async def get_agent_team():
-    model_client = OpenAIChatCompletionClient(model="gpt-4o")
+    model_client = OpenAIChatCompletionClient(model="gpt-4o", api_key="sk-uaITOoH1fy2ux31W5UQSeNfjeKQWBeIN2jlaPFRueQhRxDll", base_url="https://api.openai.com/v1)
 
     surfer = MultimodalWebSurfer(
         "WebSurfer",

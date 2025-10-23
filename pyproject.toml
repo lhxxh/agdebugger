@@ -13,8 +13,8 @@ dependencies = [
     "pydantic",
     "aiofiles",
     "openai",
-    "autogen-agentchat>=0.4.0",
-    "autogen-ext[openai]>=0.4.0",
+    "autogen-agentchat==0.4.8",
+    "autogen-ext[openai]==0.4.8",
 ]
 
 [tool.setuptools]

@@ -182,6 +182,18 @@ def deserialize(
 
         new_message_class = __message_map[message_type]
         new_message = new_message_class(**message_dict)
+
+        # NOTE: This is to handle additional bracket nesting in the messages field
+        # message_dict_copy = message_dict.copy()
+        # if "messages" in message_dict_copy and isinstance(message_dict_copy["messages"], list):
+        #     message_dict_copy["messages"] = [
+        #         deserialize(msg) if isinstance(msg, dict) else msg
+        #         for msg in message_dict_copy["messages"]
+        #     ]
+        # if "message" in message_dict_copy and isinstance(message_dict_copy["message"], dict):
+        #     message_dict_copy["message"] = deserialize(message_dict_copy["message"])
+
+        # new_message = new_message_class(**message_dict_copy)
         return new_message
     except Exception as e:
         print(
